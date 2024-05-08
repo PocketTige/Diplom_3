@@ -12,6 +12,7 @@ public class LoginPage {
     private By buttonEnter = By.xpath("//button[contains(@class, 'button_button__33qZ0') and text()='Войти']"); //локатор Войти
     private By register = By.xpath("//*[@id='root']/div/main/div/div/p[1]/a"); // локатор кнопки Зарегистрироваться
     private By recoverPassword = By.xpath(".//a[text()='Восстановить пароль']"); // локатор Восстановить пароль
+    private By buttonConstructorLoginPage = By.className("AppHeader_header__linkText__3q_va");  // локатор кнопки Конструктор
 
     // Найти и кликнуть по Личному кабинету
     public LoginPage(WebDriver driver) {
@@ -39,6 +40,9 @@ public class LoginPage {
     }
     public void clickButtonEnter() {
         driver.findElement(buttonEnter).click();
+    }
+    public void clickConstructorLoginPage() {
+        driver.findElement(buttonConstructorLoginPage).click();
     }
 
     public void setLogin(String email, String password) {

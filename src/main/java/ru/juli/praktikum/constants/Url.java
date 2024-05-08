@@ -11,7 +11,8 @@ public class Url {
     public static final String CREATE_USER = "/api/auth/register";
     public static final String DELETE_USER = "/api/auth/user";
     public static final String LOGIN_USER = "/api/auth/login";
-
+    public static final String SYSTEM_YA_BROWSER_PATH = "src/main/resources/yandexdriver.exe";
+    public static final String SYSTEM_CH_BROWSER_PATH = "src/main/resources/chromedriver.exe";
     public static final RequestSpecification REQUEST_SPECIFICATION =
             new RequestSpecBuilder()
                     .log(LogDetail.ALL)

@@ -1,13 +1,10 @@
 package ru.juli.praktikum.pageoption;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.util.List;
-
 // Класс домашней главной стораницы
-public class HopePage {
+public class HomePage {
 
     private WebDriver driver;
 
@@ -17,16 +14,12 @@ public class HopePage {
     private By buns = By.xpath(".//span[text()='Булки']"); // локатор секции Булки
     private By sauces = By.xpath(".//span[text()='Соусы']"); // локатор секции Соусы
     private By toppings = By.xpath(".//span[text()='Начинки']"); // локатор секции Начинка
-    private List<By> menuConstructor = List.of(
-            By.xpath("//h2[contains(@class, 'text_type_main-medium') and text()='Булки']"),
-            By.xpath("//h2[contains(@class, 'text_type_main-medium') and text()='Соусы']"),
-            By.xpath("//h2[contains(@class, 'text_type_main-medium') and text()='Начинки']")
-        ); // локатор списка ингридиентов конструктора
+    private By menuConstructor =  By.xpath("//div[contains(@class,'tab_tab__1SPyG tab_tab_type_current__2BEPc')]"); // локатор списка ингридиентов конструктора
     private By createOrder = By.xpath(".//button[text()='Оформить заказ']"); // локатор кнопки оформить заказ
     private By burgerIngredients = By.xpath(".//h1[text()='Соберите бургер']"); // Локатора конструктора ингредиентов Собери бургер
 
 
-    public HopePage(WebDriver driver) {
+    public HomePage(WebDriver driver) {
         this.driver = driver; // Инициализировали в нём поле driver
     }
     // Найти и кликнуть по Личному кабинету
@@ -60,19 +53,9 @@ public class HopePage {
         return actualTextBurgerIngredients;
     }
     // найти состав конструктора бургера взять текст элементов списка
-    public String getMenuConstructor0() {
+    public String getMenuConstructor() {
         String actualTextMenuConstructor;
-        actualTextMenuConstructor = driver.findElement(menuConstructor.get(0)).getText();
-        return actualTextMenuConstructor;
-    }
-    public String getMenuConstructor1() {
-        String actualTextMenuConstructor;
-        actualTextMenuConstructor = driver.findElement(menuConstructor.get(1)).getText();
-        return actualTextMenuConstructor;
-    }
-    public String getMenuConstructor2() {
-        String actualTextMenuConstructor;
-        actualTextMenuConstructor = driver.findElement(menuConstructor.get(2)).getText();
+        actualTextMenuConstructor = driver.findElement(menuConstructor).getText();
         return actualTextMenuConstructor;
     }
 }
